@@ -35,7 +35,7 @@ static int cellSize;
 {
     [super viewDidLoad];
     
-    self.title = @"圈子列表";
+    self.title = @"逸族圈";
     
     self.view.backgroundColor = [UIColor colorWithRed:219/255.f green:108/255.f blue:86/255.f alpha:1];
     
@@ -58,7 +58,7 @@ static int cellSize;
 //    [self.view insertSubview:titleLabel atIndex:1];
 //    [titleLabel release];
     
-    [self firstsignin];
+//    [self firstsignin];
     
 }
 
