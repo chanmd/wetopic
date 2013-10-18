@@ -29,6 +29,7 @@
     NSString *address;
     NSString *website;
     int covertype;
+    NSString *phonenum;
     
 }
 
@@ -50,6 +51,7 @@
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, retain) NSString *website;
 @property (nonatomic, assign) int covertype;
+@property (nonatomic, retain) NSString *phonenum;
 
 - (UsersEntity *)initWithJsonDictionary:(NSDictionary *)dic;
 

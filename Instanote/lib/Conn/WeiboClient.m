@@ -199,6 +199,34 @@
     [self post:[self getURL:path queryParameters:nil] body:postBody];
 }
 
+- (void)loginWithPhone:(NSString *)phonenum pwd:(NSString *)password
+{
+    NSString *path = [NSString stringWithFormat:@"userInfoAction_loginByPhoneNum.%@", API_FORMAT];
+    
+    NSMutableString *postBody = [[NSMutableString alloc] init];
+    [postBody appendFormat:@"phoneNum=%@", phonenum];
+    [postBody appendFormat:@"&pwd=%@", password];
+    [self post:[self getURL:path queryParameters:nil] body:postBody];
+}
+
+- (void)regWithPhone:(NSString *)phonenum
+{
+    NSString *path = [NSString stringWithFormat:@"userInfoAction_regByPhoneNum.%@", API_FORMAT];
+    NSMutableString *postBody = [[NSMutableString alloc] init];
+    [postBody appendFormat:@"phoneNum=%@", phonenum];
+    [self post:[self getURL:path queryParameters:nil] body:postBody];
+}
+
+- (void)regWithPhone:(NSString *)phonenum randomCode:(NSString *)code pwd:(NSString *)password
+{
+    NSString *path = [NSString stringWithFormat:@"userInfoAction_checkRandCode.%@", API_FORMAT];
+    NSMutableString *postBody = [[NSMutableString alloc] init];
+    [postBody appendFormat:@"phoneNum=%@", phonenum];
+    [postBody appendFormat:@"&randCode=%@", code];
+    [postBody appendFormat:@"&pwd=%@", password];
+    [self post:[self getURL:path queryParameters:nil] body:postBody];
+}
+
 - (void)user:(int)userid
 {
     NSString *path = [NSString stringWithFormat:@"topicAction_findUserByUserId.%@", API_FORMAT];

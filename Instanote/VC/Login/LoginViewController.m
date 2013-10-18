@@ -9,8 +9,8 @@
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NSDictionaryAdditions.h"
-#import "RegisterViewController.h"
-#import "ForgotPasswordViewController.h"
+#import "RegPhoneViewController.h"
+#import "NewForgotViewController.h"
 #import "JSON.h"
 #import "UsersEntity.h"
 #import "WeiboClient.h"
@@ -41,7 +41,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 //    [self.view setBackgroundColor:[UIColor orangeColor]];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -65,7 +64,7 @@
 //    
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"login_navigationbar_right", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(forgotPasswordAction)];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backAction)];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backAction)];
     
     NSArray *segmentTextContent = [NSArray arrayWithObjects:
                                    NSLocalizedString(@"login_navigationbar_left", @""),
@@ -93,12 +92,12 @@
     if (!usernameInputField) {
         usernameInputField = [[UITextField alloc] init];
         [usernameInputField setFrame:CGRectMake(20, 15, 280, 20)];
-        [usernameInputField setPlaceholder:NSLocalizedString(@"longin_username_input_placehold", @"")];
+        [usernameInputField setPlaceholder:@"手机号码"];
         [usernameInputField setClearButtonMode:UITextFieldViewModeWhileEditing];
         [usernameInputField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         [usernameInputField setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
         [usernameInputField setReturnKeyType:UIReturnKeyNext];
-        [usernameInputField setKeyboardType:UIKeyboardTypeEmailAddress];
+        [usernameInputField setKeyboardType:UIKeyboardTypeNumberPad];
         [usernameInputField setDelegate:self];
         [usernameInputField setFont:[UIFont fontWithName:FONT_NAME size:15]];
     }
@@ -287,27 +286,22 @@
     NSString * textPassword = passwordInputField.text;
     if (!textUsername || [textUsername length] == 0) {
         [msgview setFrame:CGRectMake(10, 10, 300, 44)];
-        [msgview setText:NSLocalizedString(@"login_username_input_empty", @"")];
+        [msgview setText:@"请输入手机号码"];
+        [msgview show];
+    } else if ([textUsername length] != 11) {
+        [msgview setFrame:CGRectMake(10, 10, 300, 46)];
+        [msgview setText:@"请输入正确的手机号码"];
+        [msgview show];
+    }else if (!textPassword || [textPassword length] == 0) {
+        [msgview setFrame:CGRectMake(10, 54, 300, 46)];
+        [msgview setText:NSLocalizedString(@"login_password_input_empty", @"")];
+        [msgview show];
+    } else if (textPassword && [textPassword length] < 6) {
+        [msgview setFrame:CGRectMake(10, 54, 300, 46)];
+        [msgview setText:NSLocalizedString(@"login_password_input_lessthan_six", @"")];
         [msgview show];
     } else {
-        if (![self validateEmail:textUsername]) {
-            
-            [msgview setFrame:CGRectMake(10, 10, 300, 44)];
-            [msgview setText:NSLocalizedString(@"login_username_input_notemail", nil)];
-            [msgview show];
-            
-            
-        } else if (!textPassword || [textPassword length] == 0) {
-            [msgview setFrame:CGRectMake(10, 54, 300, 46)];
-            [msgview setText:NSLocalizedString(@"login_password_input_empty", @"")];
-            [msgview show];
-        } else if (textPassword && [textPassword length] < 6) {
-            [msgview setFrame:CGRectMake(10, 54, 300, 46)];
-            [msgview setText:NSLocalizedString(@"login_password_input_lessthan_six", @"")];
-            [msgview show];
-        } else {
-            [self signinService];
-        }
+        [self signinService];
     }
 }
 
@@ -362,9 +356,6 @@
 
 - (void)convertdata:(NSObject *)data
 {
-    
-//    NSLog(@"%@", data);
-    
     NSDictionary * dic = (NSDictionary *)data;
     int status;
     status = [dic getIntValueForKey:@"status" defaultValue:0];
@@ -381,6 +372,8 @@
         if ([finishTarget retainCount] > 0 && [finishTarget respondsToSelector:finishAction]) {
             [finishTarget performSelector:finishAction  withObject:nil];
         }
+        
+        
 //        if ([[dic getStringValueForKey:@"data" defaultValue:@"null"] isEqualToString:@"null"]) {
 //            
 //        } else {
@@ -397,17 +390,17 @@
 {
     BOOL flag = false;
     switch (status) {
-        case 1:
+        case 2:
             [msgview setFrame:CGRectMake(10, 10, 300, 44)];
-            [msgview setText:NSLocalizedString(@"login_username_not_exist", nil)];
+            [msgview setText:@"这个手机号尚未注册"];
             [msgview show];
             break;
-        case 2:
+        case 3:
             [msgview setFrame:CGRectMake(10, 54, 300, 46)];
             [msgview setText:NSLocalizedString(@"login_password_error", nil)];
             [msgview show];
             break;
-        case 3:
+        case 1:
 //            [msgview setFrame:CGRectMake(10, 54, 300, 46)];
 //            [msgview setText:@"登陆成功"];
 //            [msgview show];
@@ -440,6 +433,8 @@
     [def setObject:user.hobby forKey:@"hobby"];
     [def setObject:user.website forKey:@"website"];
     [def setInteger:[self covertype:user.website] forKey:@"covertype"];
+    [def setObject:user.phonenum forKey:@"phonenum"];
+    [def setObject:@"yes" forKey:@"amilogin"];
     [def synchronize];
 }
 
@@ -458,7 +453,8 @@
     
     WeiboClient *client = [[WeiboClient alloc] initWithTarget:self action:@selector(loadDataFinished:obj:)];
     
-    [client login:email pwd:password];
+//    [client login:email pwd:password];
+    [client loginWithPhone:email pwd:password];
 
 }
 
@@ -482,11 +478,12 @@
 //    [alert release];
 //}
 
+
 - (void)forgotPasswordAction
 {
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:forgetPasswordUrl]];
     
-    ForgotPasswordViewController *forgotvc = [[ForgotPasswordViewController alloc] init];
+    NewForgotViewController *forgotvc = [[NewForgotViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:forgotvc];
     navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     [self presentModalViewController:navigationController animated:YES];
@@ -495,9 +492,10 @@
     
 }
 
+
 - (void)registerAction
 {
-    RegisterViewController *regvc = [[RegisterViewController alloc] init];
+    RegPhoneViewController *regvc = [[RegPhoneViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:regvc];
     navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     [self presentModalViewController:navigationController animated:YES];

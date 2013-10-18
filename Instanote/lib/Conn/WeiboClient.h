@@ -43,9 +43,15 @@ typedef enum {
 
 - (void)login:(NSString *)email pwd:(NSString *)password;
 
+- (void)loginWithPhone:(NSString *)phonenum pwd:(NSString *)password;
+
 - (void)forgot:(NSString *)email;
 
 - (void)reguser:(NSString *)email pwd:(NSString *)password;
+
+- (void)regWithPhone:(NSString *)phonenum;
+
+- (void)regWithPhone:(NSString *)phonenum randomCode:(NSString *)code pwd:(NSString *)password;
 
 - (void)user:(int)userid;
 
@@ -64,6 +70,7 @@ typedef enum {
 - (void)getCircleDetailCommentInfos:(NSString *)circleDetailId pageNum:(int)pn pageSize:(int)ps;
 
 - (void)getCircleUsers:(NSString *)CircleId pageNum:(int)pn pageSize:(int)ps;
+
 
 ///////////end notices
 

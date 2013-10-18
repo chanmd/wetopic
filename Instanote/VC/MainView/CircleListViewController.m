@@ -8,7 +8,7 @@
 
 #import "CircleListViewController.h"
 #import "CircleViewController.h"
-#import "WelcomeViewController.h"
+#import "LoginViewController.h"
 #import "WeiboClient.h"
 #import "CircleEntity.h"
 #import <QuartzCore/QuartzCore.h>
@@ -39,11 +39,7 @@ static int cellSize;
     
     self.view.backgroundColor = [UIColor colorWithRed:219/255.f green:108/255.f blue:86/255.f alpha:1];
     
-    [self cellSizeGen];
-    
-    [self getCircles];
-    
-    
+    [self isLogin];
     
 //    self.navigationItem.rightBarButtonItem = [self leftBarButton];
     
@@ -60,8 +56,32 @@ static int cellSize;
     
 //    [self firstsignin];
     
+    
 }
 
+- (void)drewViews
+{
+    [self cellSizeGen];
+    
+    [self getCircles];
+}
+
+- (void)isLogin
+{
+    NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
+    if (![[df objectForKey:@"amilogin"] isEqual:@"yes"]) {
+        LoginViewController* loginvc = [[LoginViewController alloc] init];
+        UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginvc];
+        nav.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        [self presentModalViewController:nav animated:NO];
+        [nav release];
+        [loginvc release];
+    } else {
+        [self drewViews];
+    }
+}
+
+/*
 - (void)firstsignin
 {
     NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
@@ -72,6 +92,7 @@ static int cellSize;
         [welcomeVC release];
     }
 }
+ */
 
 - (UIBarButtonItem *)leftBarButton
 {

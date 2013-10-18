@@ -31,6 +31,7 @@
 		6B079C8A1696C5C800BD280B /* TimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B079C841696C5C800BD280B /* TimeUtils.m */; };
 		6B0A08CA15E12D7600C38572 /* SyncNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A08C915E12D7500C38572 /* SyncNote.m */; };
 		6B0A93EE16FAF4D90010A330 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A93ED16FAF4D90010A330 /* UserViewController.m */; };
+		6B0E837F180C4D4000CB692E /* NewForgotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E837E180C4D4000CB692E /* NewForgotViewController.m */; };
 		6B1099CE17E0579100842D12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B1099CB17E0579100842D12 /* Default-568h@2x.png */; };
 		6B1099CF17E0579100842D12 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B1099CC17E0579100842D12 /* Default.png */; };
 		6B1099D017E0579100842D12 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B1099CD17E0579100842D12 /* Default@2x.png */; };
@@ -53,6 +54,7 @@
 		6BBF227315BE81A700D1D239 /* ReturnSyncResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF227215BE81A600D1D239 /* ReturnSyncResults.m */; };
 		6BC0A2A2168D450600F633D8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC0A2A1168D450600F633D8 /* SDWebImage.framework */; };
 		6BC0A2B7168D916C00F633D8 /* PhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC0A2B6168D916C00F633D8 /* PhotoHeaderView.m */; };
+		6BC4FB55180B51D100A74D89 /* RegPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC4FB54180B51D100A74D89 /* RegPhoneViewController.m */; };
 		6BC681D2168BDB1D00221FAF /* TopicsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC681D1168BDB1D00221FAF /* TopicsEntity.m */; };
 		6BC6820D168C0D1A00221FAF /* CircleCommentInfosEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC6820C168C0D1A00221FAF /* CircleCommentInfosEntity.m */; };
 		6BC68210168C0D7500221FAF /* CircleDetailImgsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC6820F168C0D7500221FAF /* CircleDetailImgsEntity.m */; };
@@ -68,6 +70,7 @@
 		6BC80E8B163A266300FFA57B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC80E88163A266300FFA57B /* SettingViewController.m */; };
 		6BC80E8F163A26C300FFA57B /* ManualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC80E8E163A26C300FFA57B /* ManualViewController.m */; };
 		6BCB789E17E161E500AD5ED3 /* circleicon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCB789D17E161E500AD5ED3 /* circleicon-120.png */; };
+		6BCD7302180BCFE8008CDA69 /* NewRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD7301180BCFE8008CDA69 /* NewRegisterViewController.m */; };
 		6BD05800156BA97200956D5B /* ResultNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD057FF156BA97200956D5B /* ResultNote.m */; };
 		6BD6907B15273BAC00421067 /* NoteCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6907A15273BAC00421067 /* NoteCache.m */; };
 		6BD7CBAD16A5273100209707 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD7CBAC16A5273100209707 /* QuartzCore.framework */; };
@@ -361,6 +364,8 @@
 		6B0A08C915E12D7500C38572 /* SyncNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncNote.m; path = elements/SyncNote.m; sourceTree = "<group>"; };
 		6B0A93EC16FAF4D90010A330 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserViewController.h; path = MainView/UserViewController.h; sourceTree = "<group>"; };
 		6B0A93ED16FAF4D90010A330 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserViewController.m; path = MainView/UserViewController.m; sourceTree = "<group>"; };
+		6B0E837D180C4D4000CB692E /* NewForgotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewForgotViewController.h; path = VC/Login/NewForgotViewController.h; sourceTree = "<group>"; };
+		6B0E837E180C4D4000CB692E /* NewForgotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewForgotViewController.m; path = VC/Login/NewForgotViewController.m; sourceTree = "<group>"; };
 		6B1099CB17E0579100842D12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6B1099CC17E0579100842D12 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6B1099CD17E0579100842D12 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -395,6 +400,8 @@
 		6BC0A2A1168D450600F633D8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Instanote/lib/SDWebImage.framework; sourceTree = "<group>"; };
 		6BC0A2B5168D916C00F633D8 /* PhotoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoHeaderView.h; sourceTree = "<group>"; };
 		6BC0A2B6168D916C00F633D8 /* PhotoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoHeaderView.m; sourceTree = "<group>"; };
+		6BC4FB53180B51D100A74D89 /* RegPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegPhoneViewController.h; path = VC/Login/RegPhoneViewController.h; sourceTree = "<group>"; };
+		6BC4FB54180B51D100A74D89 /* RegPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegPhoneViewController.m; path = VC/Login/RegPhoneViewController.m; sourceTree = "<group>"; };
 		6BC681D0168BDB1D00221FAF /* TopicsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicsEntity.h; path = elements/TopicsEntity.h; sourceTree = "<group>"; };
 		6BC681D1168BDB1D00221FAF /* TopicsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicsEntity.m; path = elements/TopicsEntity.m; sourceTree = "<group>"; };
 		6BC6820B168C0D1A00221FAF /* CircleCommentInfosEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleCommentInfosEntity.h; path = elements/CircleCommentInfosEntity.h; sourceTree = "<group>"; };
@@ -423,6 +430,8 @@
 		6BC80E8D163A26C300FFA57B /* ManualViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManualViewController.h; path = Setting/ManualViewController.h; sourceTree = "<group>"; };
 		6BC80E8E163A26C300FFA57B /* ManualViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManualViewController.m; path = Setting/ManualViewController.m; sourceTree = "<group>"; };
 		6BCB789D17E161E500AD5ED3 /* circleicon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circleicon-120.png"; sourceTree = "<group>"; };
+		6BCD7300180BCFE8008CDA69 /* NewRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewRegisterViewController.h; path = VC/Login/NewRegisterViewController.h; sourceTree = "<group>"; };
+		6BCD7301180BCFE8008CDA69 /* NewRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewRegisterViewController.m; path = VC/Login/NewRegisterViewController.m; sourceTree = "<group>"; };
 		6BD057FE156BA97200956D5B /* ResultNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultNote.h; path = elements/ResultNote.h; sourceTree = "<group>"; };
 		6BD057FF156BA97200956D5B /* ResultNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultNote.m; path = elements/ResultNote.m; sourceTree = "<group>"; };
 		6BD6907915273BAC00421067 /* NoteCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCache.h; sourceTree = "<group>"; };
@@ -823,7 +832,6 @@
 				6B02E651168AFD1C003CBAB2 /* UMFeedback.h */,
 				6BF160B1168807F10005009C /* libMobClickLibrary.a */,
 				6BF160B2168807F10005009C /* MobClick.h */,
-				664B288915143AFE00F92B96 /* images */,
 				664B285F15120BFC00F92B96 /* Instanote-Info.plist */,
 				664B286015120BFC00F92B96 /* InfoPlist.strings */,
 				664B286315120BFC00F92B96 /* main.m */,
@@ -938,7 +946,8 @@
 				6BFE146815AF14390042CF69 /* icon.png */,
 				6BFE146915AF14390042CF69 /* icon@2x.png */,
 			);
-			path = images;
+			name = images;
+			path = ../images;
 			sourceTree = "<group>";
 		};
 		6693FE7915EB18EC00A937C4 /* Login */ = {
@@ -952,6 +961,12 @@
 				6BC80E7F163A232B00FFA57B /* RegisterViewController.m */,
 				8FC695721799432500A29AB6 /* WelcomeViewController.h */,
 				8FC695731799432500A29AB6 /* WelcomeViewController.m */,
+				6BC4FB53180B51D100A74D89 /* RegPhoneViewController.h */,
+				6BC4FB54180B51D100A74D89 /* RegPhoneViewController.m */,
+				6BCD7300180BCFE8008CDA69 /* NewRegisterViewController.h */,
+				6BCD7301180BCFE8008CDA69 /* NewRegisterViewController.m */,
+				6B0E837D180C4D4000CB692E /* NewForgotViewController.h */,
+				6B0E837E180C4D4000CB692E /* NewForgotViewController.m */,
 			);
 			name = Login;
 			path = ..;
@@ -1110,6 +1125,7 @@
 		6BFCF768151CE30E008502A8 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				664B288915143AFE00F92B96 /* images */,
 				8F3E9CB917C75CF9001C4300 /* MLNavigationController.h */,
 				8F3E9CBA17C75CF9001C4300 /* MLNavigationController.m */,
 				8FE2264317A24BDC008BDB57 /* XLCycleScrollView.h */,
@@ -1806,6 +1822,9 @@
 				8F3E9CBB17C75CF9001C4300 /* MLNavigationController.m in Sources */,
 				8F3E9CBE17CAEEB1001C4300 /* CircleUserCell.m in Sources */,
 				8F3E9CC117CB7418001C4300 /* CircleUserListViewController.m in Sources */,
+				6BC4FB55180B51D100A74D89 /* RegPhoneViewController.m in Sources */,
+				6BCD7302180BCFE8008CDA69 /* NewRegisterViewController.m in Sources */,
+				6B0E837F180C4D4000CB692E /* NewForgotViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

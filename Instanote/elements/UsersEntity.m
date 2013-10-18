@@ -13,6 +13,7 @@
 @synthesize declaration,email,nick,otheraccount,otheraccountflag,otheraccountuserimage;
 @synthesize otheraccountypeid,password,registertime,sex,what,userid,userlevel;
 @synthesize image, address, hobby, website ,covertype;
+@synthesize phonenum;
 
 - (UsersEntity *)initWithJsonDictionary:(NSDictionary *)dic
 {
@@ -34,6 +35,7 @@
         hobby = [dic getStringValueForKey:@"hobby" defaultValue:@""];
         address = [dic getStringValueForKey:@"address" defaultValue:@""];
         website = [dic getStringValueForKey:@"website" defaultValue:@""];
+        phonenum = [dic getStringValueForKey:@"phonenum" defaultValue:@""];
         covertype = 0;
     }
     return self;
